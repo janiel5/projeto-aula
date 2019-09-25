@@ -32,5 +32,28 @@ class Compra(models.Model):
     def __str__(self):
         return self.nome
 
+class Apartamento(models.Model):
+    numero = models.DecimalField('número',max_digits=5,decimal_places=0)
+    qtdQuartos = models.DecimalField('quantidade de quartos',max_digits=5,decimal_places=0)
+    proprietario = models.CharField ('proprietário',max_length=30)
+    valorComdominio = models.DecimalField('valor do Comdomínio',max_digits=6,decimal_places=2)
+
+    def __str__(self):
+        return str(self.numero)
+
+
 
 # Create your models here.
+
+class Anuncio(models.Model):
+    cliente = models.CharField(max_length=30)
+    textoTitulo = models.CharField(max_lenght=30)
+    preco = models.DecimalField(max_digits=6)
+    textoAnuncio = models.CharField(max_lenght=100)
+    telefone = models.CharField(max_lenght=30)
+    secao = models.CharField(max_length=50)
+    tipoAnuncio = models.CharField(max_length=50)
+
+    def __str__(self):
+        return str(self.cliente)
+

@@ -21,3 +21,7 @@ admin.site.register(Compra, CompraAdmin)
 
 
 # Register your models here.
+class APartamentoAdmin(admin.ModelAdmin):
+    list_dislay = ('numero','qtdQuartos','proprietario','valorCondominio')
+
+admin.site.register(Apartamento, APartamentoAdmin)
